@@ -18,7 +18,18 @@ const FavoriteItem = (props) => {
       </div>
 
       <div className={`${classes.favorite__img}`}>
-        <Image alt="favorite-img" src={img} width="380" height="250" />
+        <Image
+          alt="favorite-img"
+          src={img}
+          width={380}
+          height={250}
+          style={{
+            objectFit: "contain", // ubah dari "cover" ke "contain"
+            width: "100%",
+            height: "100%",
+            background: "#fff" // opsional, agar gambar transparan tetap bagus
+          }}
+        />
       </div>
      
       <div className={`${classes.favorite__live_url} bg-transparent`}>

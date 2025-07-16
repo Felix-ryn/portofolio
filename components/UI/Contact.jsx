@@ -23,7 +23,7 @@ const Contact = () => {
                 <span>
                   <i className="ri-map-pin-line"></i>
                 </span>
-                <p>Malang - SMK TELKOM MALANG</p>
+                <p>Surabaya - East Java</p>
               </li>
               <li className={`${classes.info__item}`}>
                 <span>
@@ -35,7 +35,7 @@ const Contact = () => {
                 <span>
                   <i className="ri-phone-line"></i>
                 </span>
-                <p>+6283850545694</p>
+                <p>+62 817-9482-485</p>
               </li>
             </ul>
 
@@ -51,6 +51,9 @@ const Contact = () => {
               </Link>
               <Link href="https://www.facebook.com/felix.r.agusta/">
                 <i className="ri-facebook-line"></i>
+              </Link>
+              <Link href="https://www.linkedin.com/in/felix-ryan-agusta-4ab72927a/">
+                <i className="ri-linkedin-line"></i>
               </Link>
             </div>
           </Col>

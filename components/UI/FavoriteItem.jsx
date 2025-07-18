@@ -33,12 +33,12 @@ const FavoriteItem = (props) => {
       </div>
      
       <div className={`${classes.favorite__live_url} bg-transparent`}>
-        <button className="primary__btn_url">
-          <a href={prodUrl}>Lihat Selengkapnya</a>
-        </button>
+        <Link href={`/product/${prodUrl}`}>
+          <button className="primary__btn_url">
+            Lihat Selengkapnya
+          </button>
+        </Link>
       </div>
-  
-     
     </div>
   );
 };

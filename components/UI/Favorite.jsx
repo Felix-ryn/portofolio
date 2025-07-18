@@ -4,28 +4,48 @@ import SectionSubtitle from "./SectionSubtitle";
 import classes from "../../styles/favorite.module.css";
 import FavoriteItem from "./FavoriteItem";
 
-import favoriteData from "../data/favorite";
+const favoriteItems = [
+  {
+    title: "website kasir",
+    img: "/images/kasir.jpg",
+    prodUrl: "web1",
+    keyword: ["kasir", "website"],
+    category: "Web Design",
+  },
+  {
+    title: "website resepsionis hotel",
+    img: "/images/hotel.jpg",
+    prodUrl: "web2",
+    keyword: ["hotel", "resepsionis"],
+    category: "Web Design",
+  },
+  {
+    title: "website toko bangunan",
+    img: "/images/tokobangunan.jpg",
+    prodUrl: "web3",
+    keyword: ["produk", "website"],
+    category: "Web Design",
+  },
+  {
+    title: "UI Aplikasi ayomasak ",
+    img: "/images/ayomasak.jpg",
+    prodUrl: "ui1",
+    keyword: ["mobile", "ui", "design"],
+    category: "Mobile App",
+  },
+];
 
 const Favorite = () => {
   const [filter, setFilter] = useState("Mobile App");
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    if (filter === "Mobile App") {
-      const filteredData = favoriteData.filter(
-        (item) => item.category === filter
-      );
-
-      setData(filteredData);
-    }
-
-    if (filter === "Web Design") {
-      const filteredData = favoriteData.filter(
-        (item) => item.category === filter
-      );
-
-      setData(filteredData);
-    }
+    const filteredData = favoriteItems.filter(
+      (item) =>
+        (filter === "Mobile App" && item.category === "Mobile App") ||
+        (filter === "Web Design" && item.category === "Web Design")
+    );
+    setData(filteredData);
   }, [filter]);
 
   const active = `${classes.tab__btn__active}`;
@@ -60,8 +80,8 @@ const Favorite = () => {
             </div>
           </Col>
 
-          {data?.map((item) => (
-            <Col lg="4" md="4" sm="6" key={item.id}>
+          {data.map((item, idx) => (
+            <Col lg="4" md="4" sm="6" key={idx}>
               <FavoriteItem item={item} />
             </Col>
           ))}

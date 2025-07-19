@@ -41,9 +41,9 @@ const Hero = () => {
               style={{
                 overflow: "hidden",
                 borderRadius: "40px",
-                maxWidth: "400px",
                 width: "100%",
-                aspectRatio: "1/1", // biar tetap kotak dan responsif
+                maxWidth: "350px", // batas maksimum di HP
+                aspectRatio: "1 / 1",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -57,7 +57,7 @@ const Hero = () => {
                   objectFit: "cover",
                   transform: "scale(1.2)"
                 }}
-                sizes="(max-width: 768px) 100vw, 400px"
+                sizes="(max-width: 768px) 100vw, 350px"
                 priority
               />
             </div>

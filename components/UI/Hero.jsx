@@ -18,14 +18,17 @@ const Hero = () => {
               <h2 className="mt-3 mb-3">I&apos;m Felix Ryan </h2>
               <h5 className="mb-4">Backend Developer and Data Engineer</h5>
               <p>
-Saya Felix Ryan Agusta, mahasiswa Sains Data Terapan di Politeknik Elektronika Negeri Surabaya dan alumni SMK Telkom Malang jurusan Rekayasa Perangkat Lunak. Saya memiliki ketertarikan besar pada Data Engineering dan Backend Development, serta terus mengembangkan kemampuan dalam pengolahan data, database, dan API. Saya antusias berkontribusi dalam proyek teknologi yang menantang dan berdampak nyata.              </p>
+                Saya Felix Ryan Agusta, mahasiswa Sains Data Terapan di Politeknik Elektronika Negeri Surabaya dan alumni SMK Telkom Malang jurusan Rekayasa Perangkat Lunak. Saya memiliki ketertarikan besar pada Data Engineering dan Backend Development, serta terus mengembangkan kemampuan dalam pengolahan data, database, dan API. Saya antusias berkontribusi dalam proyek teknologi yang menantang dan berdampak nyata.
+              </p>
               <div className="mt-5">
                 <button className="primary__btn">
                   <Link href="#about">About me</Link>
                 </button>
 
                 <button className="secondary__btn">
-                  <Link href="https://drive.google.com/file/d/1lsZdnESIlbRiOK1EFc1y7_xqfUb1LXVT/view?usp=sharing">Download CV</Link>
+                  <Link href="https://drive.google.com/file/d/1lsZdnESIlbRiOK1EFc1y7_xqfUb1LXVT/view?usp=sharing">
+                    Download CV
+                  </Link>
                 </button>
               </div>
             </div>
@@ -38,8 +41,9 @@ Saya Felix Ryan Agusta, mahasiswa Sains Data Terapan di Politeknik Elektronika N
               style={{
                 overflow: "hidden",
                 borderRadius: "40px",
-                width: "400px",
-                height: "400px",
+                maxWidth: "400px",
+                width: "100%",
+                aspectRatio: "1/1", // biar tetap kotak dan responsif
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -48,19 +52,19 @@ Saya Felix Ryan Agusta, mahasiswa Sains Data Terapan di Politeknik Elektronika N
               <Image
                 alt="hero-image"
                 src={heroImg}
-                width={400}
-                height={400}
+                fill
                 style={{
                   objectFit: "cover",
-                  borderRadius: "0",
                   transform: "scale(1.2)"
                 }}
+                sizes="(max-width: 768px) 100vw, 400px"
+                priority
               />
             </div>
           </Col>
         </Row>
       </Container>
-    </section >
+    </section>
   );
 };
 
